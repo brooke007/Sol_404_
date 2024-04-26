@@ -25,7 +25,7 @@ pub fn buytokens(
     }
 
     let seeds = b"nft";
-    let bump = ctx.bumps.jelly_token_mint;
+    let bump = ctx.bumps.nft_mint;
     let signer: &[&[&[u8]]] = &[&[seeds, &[bump]]];
 
     
