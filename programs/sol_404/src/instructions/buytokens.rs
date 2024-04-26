@@ -31,7 +31,8 @@ pub fn buytokens(
     
     let token_balance = & ctx.accounts.buyer_token_account.amount;
     
-    let mut nft_mint = (*token_balance % 10 + amount) % 10;
+    let mut jelly_mint = amount % 10;
+    let mut nft_mint = (*token_balance % 10 +jelly_mint) % 100;
 
     // transfer nft
     while nft_mint > 0{
@@ -70,6 +71,7 @@ pub fn buytokens(
         .unwrap();
 
     mint_to(cpi_ctx, transfer_jelly_amount)?;
+
     
     
 
