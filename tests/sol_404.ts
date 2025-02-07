@@ -21,7 +21,7 @@ describe("sol_404", () => {
   const connection = new Connection("http://127.0.0.1:8899", "confirmed");
   const metaplex = Metaplex.make(connection)
   
-  const privateKeyJson = "/Users/zhoujianing/.config/solana/id.json"
+  const privateKeyJson = "/.config/solana/id.json"
   const privateKeyString = fs.readFileSync(privateKeyJson, { encoding: 'utf8' });
   const privateKeyUint8Array = new Uint8Array(JSON.parse(privateKeyString));
   const admin = anchor.web3.Keypair.fromSecretKey(privateKeyUint8Array);
